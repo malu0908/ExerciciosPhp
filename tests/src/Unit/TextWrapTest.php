@@ -84,11 +84,24 @@ class TextWrapTest extends TestCase {
    * @covers Galoa\ExerciciosPhp\TextWrap\Resolucao::textWrap
    */
   public function testForBigWord() {
-    $ret = $this->resolucao->textWrap("gigante", 3);
-    $this->assertEquals("gig", $ret[0]);
+    $ret = $this->resolucao->textWrap("Gigante", 3);
+    $this->assertEquals("Gig", $ret[0]);
     $this->assertEquals("ant", $ret[1]);
     $this->assertEquals("e", $ret[2]);
     $this->assertCount(3, $ret);
   }
 
+  /**
+   * Checa o retorno para o caso em que há mais de um espaço
+   * no fim de uma substring.
+   *
+   * @covers Galoa\ExerciciosPhp\TextWrap\Resolucao::textWrap
+   */
+  public function testForSpaces() {
+    $ret = $this->resolucao->textWrap("Estar   de pé", 5);
+    $this->assertEquals("Estar", $ret[0]);
+    $this->assertEquals("de pé", $ret[1]);
+    $this->assertCount(2, $ret);
+  }
+  
 }
