@@ -6,6 +6,9 @@ namespace Galoa\ExerciciosPhp\TextWrap;
  * Classe responsável por gerar um array de substrings.
  *
  * @author Maria Luiza Fernandes
+ * @package TextWrap
+ * @access public
+ * @version 0.1
  */
 class Resolucao implements TextWrapInterface {
 
@@ -18,6 +21,10 @@ class Resolucao implements TextWrapInterface {
    *   Contém o conteúdo a ser dividido.
    * @param int $length
    *   Contém o tamanho máximo de cada substring.
+   * @return array
+   *   Array contendo as substrings.
+   * @access public
+   * @version 0.1
    */
   public function textWrap(string $text, int $length): array {
     $words = [];
