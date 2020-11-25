@@ -29,6 +29,8 @@ class Resolucao implements TextWrapInterface {
     $words = [];
     $currentPosition = 0;
 
+    //Verifica se a string a ser dividida não é vazia.
+    //Verifica se o tamanho máximo de cada substring é maior que zero.
     if ($length > 0 && strlen($text) > 0) {
       for ($upIndex = 0; $upIndex < strlen($text);) {
         $downIndex = $upIndex + $length;
