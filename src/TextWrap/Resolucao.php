@@ -94,6 +94,13 @@ class Resolucao implements TextWrapInterface {
          * Atualiza o indíce de limite inferior para o próximo caracter.
          */
         if ($downIndex < strlen($text)) {
+          
+          /*
+           * Percorre todos os espaços encontrados entre a substring atual
+           * e a próxima substring, para que a próxima substring não comece com espaço.
+           * Essa verificação é feita para caso seja inserido espaços adicionais 
+           * entre cada substring na string de entrada.
+           */
           $sum = 0;
           $aux = $downIndex;
           while ($text[$aux] == ' ') {
